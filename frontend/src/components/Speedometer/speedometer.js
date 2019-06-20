@@ -10,9 +10,7 @@ class Speedometer extends Component {
 
   componentDidMount() {
     const { endpoint } = this.state;
-    //Very simply connect to the socket
     const socket = socketIOClient(endpoint);
-    //Listen for data on the "outgoing data" namespace and supply a callback for what to do when we get one. In this case, we set a state variable
     socket.on("Speed meter", data => this.setState({ response: data }));
   }
 
@@ -27,8 +25,9 @@ class Speedometer extends Component {
           startColor="orange"
           segments={5}
           endColor="red"
-          needleTransition={"easeElastic"}
-          ringWidth={30}
+          needleHeightRatio={0.8}
+          needleTransition={"easeCircleIn"}
+          ringWidth={10}
           textColor={"red"}
         />
       </div>

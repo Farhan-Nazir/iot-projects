@@ -11,7 +11,7 @@ function speedometer(socket) {
 
     // //we emit the data. No need to JSON serialization!
     socket.emit("Speed meter", speed);
-  }, 100);
+  }, 200);
 }
 
 module.exports = speedometer;
