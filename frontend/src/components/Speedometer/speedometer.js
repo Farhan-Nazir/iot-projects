@@ -18,6 +18,7 @@ class Speedometer extends Component {
     const { response } = this.state;
     return (
       <div style={{ textAlign: "center" }}>
+        <h1>Speed Meter</h1>
         <ReactSpeedometer
           maxValue={140}
           value={response}
