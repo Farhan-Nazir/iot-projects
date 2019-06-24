@@ -4,6 +4,9 @@ const LEDPin = 4;
 
 function blinkLED(socket) {
   // Light up LED for 500 ms
+  // set up wiring
+WPI.setup("wpi");
+WPI.pinMode(LEDPin, WPI.OUTPUT);
   let state = 0;
 
   WPI.digitalWrite(LEDPin, 1);
@@ -20,7 +23,5 @@ function blinkLED(socket) {
   }, 500);
 }
 
-// set up wiring
-WPI.setup("wpi");
-WPI.pinMode(LEDPin, WPI.OUTPUT);
-blinkLED();
+
+module.exports = blinkLED;
