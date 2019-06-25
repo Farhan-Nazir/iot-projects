@@ -14,8 +14,8 @@ class Led extends Component {
     socket.on("Outgoing Led", (data, err) => {
       if (err) throw err;
       console.log(data);
-     data === true && this.setState({ ledSrc:"https://img.icons8.com/office/80/000000/led-diode.png", text: "ON"})
-     data === false && this.setState({ ledSrc:"https://img.icons8.com/ultraviolet/80/000000/led-diode.png", text: "OFF"})
+     data === 1 && this.setState({ ledSrc:"https://img.icons8.com/office/80/000000/led-diode.png", text: "ON"})
+     data === 0 && this.setState({ ledSrc:"https://img.icons8.com/ultraviolet/80/000000/led-diode.png", text: "OFF"})
       this.setState({ data });
     });
   }

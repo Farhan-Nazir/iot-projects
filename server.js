@@ -3,6 +3,7 @@ const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const Led = require("./simulators/Led/Led");
 const Speedometer = require("./simulators/Speedometer/speedometer");
+const BlinkingLed = require("././simulators/Led/blinkingLed");
 //let socket = require("socket.io-client")("http://localhost:5000");
 
 const PORT = process.env.PORT || 5000;
@@ -11,8 +12,9 @@ app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"));
 io.on("connection", socket => {
   console.log("New connection !!!");
 
-  Led(socket);
+ // Led(socket);
   Speedometer(socket);
+  BlinkingLed(socket);
   //   socket.on("Incoming Led", data => {
   //     console.log(data);
   //     socket.broadcast.emit("Outgoing Led", data);
