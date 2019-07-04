@@ -33,7 +33,7 @@ class Led extends Component {
         <div style={{ textAlign: "center" }}>
           <h1>Led Light</h1>
           <h5>{this.state.text}</h5>
-          <img src={this.state.ledSrc} />
+          <img src={this.state.ledSrc} alt="Led"/>
         </div>
       </div>
     );
