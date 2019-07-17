@@ -23,7 +23,7 @@ io.on("connection", socket => {
   /************ end simulators ***********/
 
   /*********** Real  ****************/
- BlinkingLed.startBlink(socket);
+//  BlinkingLed.startBlink(socket);
  socket.on("OnOff", state => {
   LedOnOff(state);
 });
@@ -32,7 +32,7 @@ io.on("connection", socket => {
  /************ End Real  ***************/
   //A special namespace "disconnect" for when a client disconnects
   socket.on("disconnect", () => {
-    // BlinkingLed.stopBlink();
+    BlinkingLed.stopBlink();
     console.log("Client disconnected");
   });
 });

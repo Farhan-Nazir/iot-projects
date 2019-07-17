@@ -23,7 +23,7 @@ function blinkLED(socket) {
 function stopBlink() {
   //function to stop blinking
   console.log("Led is stop now");
-  clearInterval(blinkInterval); // Stop blink intervals
+ // clearInterval(blinkInterval); // Stop blink intervals
   LED.writeSync(0); // Turn LED off
   LED.unexport(); // Unexport GPIO to free resources
 }
